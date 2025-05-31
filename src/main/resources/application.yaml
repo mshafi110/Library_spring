@@ -14,3 +14,11 @@ spring:
       mode: always
 
 
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    path: /v3/api-docs
+  title: Spring Library
+  description: project to manage books
+  version: 1.0.0

@@ -1,5 +1,6 @@
-package com.example.library_spring;
+package com.example.library_spring.book;
 
+import com.example.library_spring.library.LibraryEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -11,11 +12,18 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Book {
+public class BookEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String name;
-    Integer age;
+    String title;
+    String author;
+    String isbn;
+    String genre;
+    Boolean available;
+
+    @ManyToOne
+    @JoinColumn(name = "library_id")
+    LibraryEntity library;
 }
