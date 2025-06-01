@@ -1,6 +1,7 @@
 package com.example.library_spring.book;
 
 import com.example.library_spring.library.LibraryEntity;
+import com.example.library_spring.person.PersonEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -23,7 +24,10 @@ public class BookEntity {
     String genre;
     Boolean available;
 
-    @ManyToOne
+     @ManyToOne
     @JoinColumn(name = "library_id")
     LibraryEntity library;
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    BookEntity book;
 }

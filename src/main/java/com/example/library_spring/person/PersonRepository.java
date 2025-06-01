@@ -1,4 +1,6 @@
 package com.example.library_spring.person;
 
-public class PersonRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PersonRepository extends JpaRepository<PersonEntity, Long> {
 }

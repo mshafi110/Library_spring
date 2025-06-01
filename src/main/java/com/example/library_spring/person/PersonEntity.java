@@ -1,5 +1,6 @@
 package com.example.library_spring.person;
 
+import com.example.library_spring.book.BookEntity;
 import com.example.library_spring.library.LibraryEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -15,15 +16,9 @@ import lombok.experimental.FieldDefaults;
 public class PersonEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long  = Id;
+    Long  id;
 
     String firstName;
     String lastName;
     String phoneNumber;
-
-    @OneToMany
-    @JoinColumn(name = "Person_id")
-    PersonEntity person;
-
-
 }
