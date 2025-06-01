@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/library")
+@RequestMapping("/Person")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class PersonController {
 
