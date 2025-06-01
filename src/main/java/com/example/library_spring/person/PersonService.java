@@ -20,7 +20,12 @@ public class PersonService {
     }
 
     public PersonEntity save(PersonEntity personEntity) {
-        return personRepository.save(personEntity);
+        if (personEntity.getPhoneNumber()==null || personEntity.getPhoneNumber().length() != 11) {
+           System.out.println("شماره موبایل درست وارد نشده است");
+           return null;
+        }else {
+            return personRepository.save(personEntity);
+        }
     }
 
     public PersonEntity findById(Long id) {
@@ -44,6 +49,10 @@ public class PersonService {
 
         if (updatedPerson.getLastName() != null) {
             existingPerson.setLastName(updatedPerson.getLastName());
+        }
+        if (updatedPerson.getPhoneNumber() != null || updatedPerson.getPhoneNumber().length() != 11) {
+
+            existingPerson.setPhoneNumber(updatedPerson.getPhoneNumber());
         }
 
         return personRepository.save(existingPerson);

@@ -55,6 +55,16 @@ public class BookService {
             bookEntityToUpdate.setTitle(bookEntity.getTitle());
         }
 
+        if(bookEntity.getIsbn() != null){
+            bookEntityToUpdate.setIsbn(bookEntity.getIsbn());
+        }
+        if(bookEntity.getGenre() != null){
+            bookEntityToUpdate.setGenre(bookEntity.getGenre());
+        }
+        if(bookEntity.getAvailable() != null){
+            bookEntityToUpdate.setAvailable(bookEntity.getAvailable());
+        }
+
         return bookRepository.save(bookEntityToUpdate);
     }
 }
