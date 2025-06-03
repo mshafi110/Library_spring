@@ -24,10 +24,19 @@ public class BookEntity {
     String genre;
     Boolean available;
 
-     @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "library_id")
     LibraryEntity library;
     @ManyToOne
     @JoinColumn(name = "book_id")
     BookEntity book;
+
+    private boolean available = true; // پیش‌فرض: قابل امانت
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
 }
