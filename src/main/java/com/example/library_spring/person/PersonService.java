@@ -39,6 +39,8 @@ public class PersonService {
         personRepository.delete(person);
     }
 
+    // گرفتن تمامی کتاب های امانت گرفته شده شخص
+
     public PersonEntity update(Long id, PersonEntity updatedPerson) {
         PersonEntity existingPerson = personRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Person not found with ID: " + id));

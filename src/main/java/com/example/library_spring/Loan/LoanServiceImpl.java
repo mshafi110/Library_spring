@@ -43,6 +43,8 @@ public class LoanServiceImpl implements LoanService {
         return null;
     }
 
+    // گرفتن bookid و persionid و true کردن returned
+
     @Override
     public void deleteLoan(Long id) {
         loanRepository.deleteById(id);
