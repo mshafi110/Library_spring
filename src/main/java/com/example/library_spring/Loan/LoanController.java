@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/Loan")
+@RequestMapping("/loan")
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class LoanController {
 

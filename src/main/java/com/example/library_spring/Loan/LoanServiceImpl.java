@@ -1,14 +1,18 @@
 package com.example.library_spring.Loan;
 
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class LoanServiceImpl implements LoanService {
 
-    private final LoanRepository loanRepository;
-
-    public LoanServiceImpl(LoanRepository loanRepository) {
-        this.loanRepository = loanRepository;
-    }
+    LoanRepository loanRepository;
 
     @Override
     public LoanEntity createLoan(LoanEntity loan) {
@@ -46,6 +50,6 @@ public class LoanServiceImpl implements LoanService {
 
     @Override
     public List<LoanEntity> getActiveLoans() {
-        return loanRepository.findByReturned(false);
+        return loanRepository.findByReturnedFalse();
     }
 }

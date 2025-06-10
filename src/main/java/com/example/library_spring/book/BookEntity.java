@@ -22,7 +22,7 @@ public class BookEntity {
     String author;
     String isbn;
     String genre;
-    Boolean available;
+    Boolean available = true;
 
     @ManyToOne
     @JoinColumn(name = "library_id")
@@ -31,12 +31,7 @@ public class BookEntity {
     @JoinColumn(name = "book_id")
     BookEntity book;
 
-    private boolean available = true; // پیش‌فرض: قابل امانت
-
     public boolean isAvailable() {
         return available;
     }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
 }

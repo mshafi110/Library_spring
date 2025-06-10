@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+
 public interface LoanService {
     LoanEntity createLoan(LoanEntity loan);
     List<LoanEntity> getAllLoans();
